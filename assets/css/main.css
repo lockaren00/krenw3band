@@ -101,8 +101,17 @@
 .slider {
     padding-top: 50%;
     margin-top: var(--header-height);
-    background: url(https://www.w3schools.com/w3images/la.jpg) center / cover no-repeat;;
+    background: url(https://www.w3schools.com/w3images/la.jpg) top center / cover no-repeat;
     position: relative;
+}
+
+.slider-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    /* background-color: rgba(0, 0, 0, 0.6); */
 }
 
 .slider__text {
@@ -371,6 +380,10 @@
 
 .modal__footer-close:hover {
     opacity: 0.8;
+}
+
+.modal__footer-help-link {
+    color: #2196f3;
 }
 
 .modal__footer-help-link:hover {

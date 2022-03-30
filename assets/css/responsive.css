@@ -3,8 +3,33 @@
 
 }
 
+/* PC */
+@media (min-width: 1024px) {
+    .modal__header-name {
+        line-height: 45px;
+        margin: 10px 0;
+    }
+
+    .modal__body-input {
+        margin-top: 15px;
+        margin-bottom: 20px;
+        padding: 12px 10px;
+    }
+
+    .modal__body-btn-input {
+        padding: 16px;
+        line-height: 1.6;
+    }
+
+    .modal__footer-close {
+        padding: 8px 16px;
+        line-height: 1.6;
+    }
+}
+
 /* Tablet */
 @media (min-width: 740px) and (max-width: 1023px) {
+
     html {
         font-size: 66%;
     }
@@ -23,10 +48,6 @@
 @media (max-width: 739px) {
     html {
         font-size: 70%;
-    }
-
-    :root {
-        --header-height: 50px;
     }
 
     .mt-8-mobile {
@@ -113,3 +134,4 @@
         left: 54.4%;
     }
 }
+

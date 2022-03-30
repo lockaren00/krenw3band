@@ -58,6 +58,7 @@
         </div>
 
         <div class="slider">
+            <div class="slider-overlay"></div>
             <div class="slider__text">
                 <h2 class="slider__text-heading">
                     Chicago
@@ -298,12 +299,14 @@
     </div>
     <script>
         var header = document.getElementById('header')
-        var mobileMenu = document.getElementById('mobile-menu')
+        var mobileMenu = document.querySelector('.mobile-menu-btn')
         var headerHeight = header.clientHeight
         var menuItems = document.querySelectorAll('.header__navbar-list li a[href*="#"]')
 
+        // Click menu btn hien thanh menu
         mobileMenu.onclick = function() {
             var isClosed = header.clientHeight === headerHeight
+
             if(isClosed) {
                 header.style.height = 'auto'
             }else {
@@ -311,12 +314,13 @@
             }
         }
 
+        // Kiem tra anh em lien ke
         for(var i = 0; i < menuItems.length; i++) {
             var menuItem = menuItems[i]
             menuItem.onclick = function() {
                 var isParentMenu = this.nextElementSibling && this.nextElementSibling.classList.contains('header__subnav-list')
                 if(isParentMenu) {
-                    event.preventDefault()
+                   event.preventDefault()
                 }else {
                     header.style.height = null
                 }
@@ -328,22 +332,25 @@
         var modalCloses = document.querySelectorAll('.js-modal-close')
         var modalContainer = document.querySelector('.js-modal-container')
 
+        // Ấn vào btn hiện modal
         for(var buyBtn of buyBtns) {
-            buyBtn.addEventListener('click', function() {
+            buyBtn.onclick = function() {
                 modal.classList.add('open')
-            })
+            }
         }
 
-        for(var i = 0; i < modalCloses.length; i++) {
-            var modalClose = modalCloses[i]
+        // Tắt modal
+        for(var modalClose of modalCloses) {
             modalClose.onclick = function() {
                 modal.classList.remove('open')
             }
         }
 
-        modalContainer.addEventListener('click', function() {
+        // Tắt hiện tượng nổi bọt của modal tới modalContainer
+        modalContainer.onclick = function() {
             event.stopPropagation()
-        })
+        }
+
 
         
 
